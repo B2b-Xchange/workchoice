@@ -45,3 +45,7 @@ group :development do
   gem 'spring'
 end
 
+# 01/04/2016 added
+group :production do
+  gem 'rails_12factor'
+end
