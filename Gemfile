@@ -49,3 +49,6 @@ end
 group :production do
   gem 'rails_12factor'
 end
+
+# 01/04/2015 added heroku production server
+gem 'puma'
