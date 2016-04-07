@@ -50,5 +50,10 @@ group :production do
   gem 'rails_12factor'
 end
 
-# 01/04/2015 added heroku production server
+# 01/04/2016 added heroku production server
 gem 'puma'
+
+gem 'minitest-reporters'
+
+# 02/04/2016 added bootstrap
+gem 'bootstrap-sass'

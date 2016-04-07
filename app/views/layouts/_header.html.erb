@@ -1,0 +1,19 @@
+<header class="navbar navbar-fixed-top navbar-right">
+  <div class="container">
+    <%= link_to image_tag("workchoice-logo-sx.svg", alt: "Workchoice logo", size: "40"), root_path, id: "logo", style: "float: left; padding-top: 8px" %>
+    <h4 style="float: left; padding-top: 8px; color: rgb(181, 55,58);">Workchoice</h4>
+
+    <%= link_to image_tag("Flag_of_the_United_Kingdom.svg",
+        alt: "English version", size: "40"), '#', id:
+        "english-page", style: "float: right; padding-top: 8px;
+                                padding-left: 15px; padding-right: 15px;" %>
+    <%= link_to image_tag("Flag_of_Germany.svg", alt:
+        "German version", size: "40"), '#', id: "german-page",
+        style: "float: right; padding-top: 8px; padding-left: 30px;" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Log in", '#' %></li>
+      </ul>
+    </nav>
+  </div>
+</header>

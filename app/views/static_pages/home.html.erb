@@ -1,11 +1,21 @@
-<% provide :title, "Home" %>
-<div>
-  Here goes all logins.
-</div>
-<h1>Workchoice</h1>
-<p>Workchoice application. Please log in with facebook or
-  linkedin. Or register.</p>
 
-<div>
-  here goes the register button.
+<div class="jumbotron">
+  <h2>Workchoice</h2>
+  <p>Workchoice is ... . We offer enterprise support and
+    availability over "Always-on" Heroku server hosted in Europe.
+    You can contact us any time with suggestions or critics. Our
+    service is free of charge and there will always be an publishing option that
+    doesn't cost you a cent. With the option to upgrade to a premium
+    scheme. What a premium scheme includes is described in our
+    <%= link_to "Help", help_path
+    %> pages.
+  </p>
+
+  <%= link_to "Sign up now", signup_path, class: "btn btn-lg btn-primary" %>
+  <br />
+  Login with Facebook
+  <br />
+  Login with Linkedin
+
 </div>
+
