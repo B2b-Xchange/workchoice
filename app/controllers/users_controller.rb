@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       # successful save
       # display message once
-      flash[:success] = "You successfully signed up for the workchoice application."
+      flash[:success] = "You successfully signed up."
       redirect_to @user
     else
       render 'new'

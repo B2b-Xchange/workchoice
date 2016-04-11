@@ -57,3 +57,6 @@ gem 'minitest-reporters'
 
 # 02/04/2016 added bootstrap
 gem 'bootstrap-sass'
+
+# 11/04/2016 added ruby version for heroku
+gem 'ruby', '2.2.4'
