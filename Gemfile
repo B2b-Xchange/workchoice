@@ -48,6 +48,7 @@ end
 # 01/04/2016 added
 group :production do
   gem 'rails_12factor'
+  # ruby '2.2.4'
 end
 
 # 01/04/2016 added heroku production server
@@ -59,4 +60,5 @@ gem 'minitest-reporters'
 gem 'bootstrap-sass'
 
 # 11/04/2016 added ruby version for heroku
-ruby '2.0.0'
+# heroku can't install this gem
+# ruby '2.0.0'
