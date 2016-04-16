@@ -8,3 +8,9 @@
 # two:
 #   name: MyString
 #   email: MyString
+
+# 16/04/2016 ADD
+marco:
+  name: Marco Example
+  email: marco@example.com
+  password_digest: <%= User.digest 'password' %>
