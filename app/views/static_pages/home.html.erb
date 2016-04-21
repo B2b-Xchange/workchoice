@@ -1,4 +1,6 @@
 
+<div id="fb-root"></div>
+
 <div class="jumbotron">
   <h2>Workchoice</h2>
   <p>Workchoice is ... . We offer enterprise support and
@@ -10,12 +12,17 @@
     <%= link_to "Help", help_path
     %> pages.
   </p>
-
-  <%= link_to "Sign up now", signup_path, class: "btn btn-lg btn-primary" %>
   <br />
-  Login with Facebook
-  <br />
-  Login with Linkedin
-
+  <div class="center">
+    <%= link_to "Sign up now", signup_path, class: "btn btn-lg
+                                                    btn-primary" %>
+    <br /><br />
+    <div class="fb-login-button" data-max-rows="1" data-size="xlarge"
+         data-show-faces="false" data-auto-logout-link="false"></div>
+   
+    <br /><br />
+    <%= link_to image_tag("Sign-in-Large---Active.png",
+        alt: "Continue with linkedin"), '/auth/linkedin', id: "continue-with-linkedin"  %>
+  </div>
 </div>
 

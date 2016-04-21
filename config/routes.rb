@@ -15,6 +15,11 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+
+  #Oauth routes
+  get 'auth/facebook/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'auth/linkedin/callback', to: 'sessions#create'
   
   resources :users
   

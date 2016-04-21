@@ -75,7 +75,6 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 
     Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:facebook]
     get '/auth/facebook'
-    raise
     assert is_logged_in?
     assert_redirected_to @user
     follow_redirect!

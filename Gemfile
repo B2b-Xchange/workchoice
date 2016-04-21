@@ -57,3 +57,8 @@ gem 'minitest-reporters'
 
 # 02/04/2016 added bootstrap
 gem 'bootstrap-sass'
+
+# 17/04/2016 facebook integration
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'

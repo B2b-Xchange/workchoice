@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   # returns hash for tests
   def User.digest(string)
@@ -39,6 +39,24 @@ class User < ActiveRecord::Base
   #Forgets a user
   def forget
     update_attribute :remember_digest, nil
+  end
+
+  # Omniauth create method
+  def self.create_with_omniauth(auth)
+
+    user = User.where(uid: auth['uid'], provider: auth['provider']).first_or_create(email: auth['info']['email'],
+                                                                                    name: auth['info']['name'],
+                                                                                    password: auth['credentials']['token'],
+                                                                                    password_confirmation: auth['credentials']['token'],
+                                                                                    oauth_token: auth['credentials']['token'],
+                                                                                    oauth_expires_at: auth['credentials']['expires_at'])
+
+    if user.persisted?
+      user
+    else
+      user.save!
+      user
+    end
   end
   
 end
