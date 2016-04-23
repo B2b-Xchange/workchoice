@@ -14,9 +14,16 @@ marco:
   name: Marco Example
   email: marco@example.com
   password_digest: <%= User.digest 'password' %>
+  admin: true
 
 jonathan:
   name: Jonathan Archer
   email: jonathan@enterprise.uss
   password_digest: <%= User.digest('password') %>
-  
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name: <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest 'password' %>
+<% end %>
