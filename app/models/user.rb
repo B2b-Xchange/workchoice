@@ -51,8 +51,10 @@ class User < ActiveRecord::Base
                                                                                     password: auth['credentials']['token'],
                                                                                     password_confirmation: auth['credentials']['token'],
                                                                                     oauth_token: auth['credentials']['token'],
-                                                                                    oauth_expires_at: auth['credentials']['expires_at'])
-
+                                                                                    oauth_expires_at: auth['credentials']['expires_at'],
+                                                                                    activated: true,
+                                                                                    activated_at: Time.zone.now)
+    
     if user.persisted?
       user
     else
@@ -63,8 +65,7 @@ class User < ActiveRecord::Base
 
   # activate an account
   def activate
-    update_attribute :activated, true
-    update_attribute :activated_at, Time.zone.now
+    update_columns activated: true, activated_at: Time.zone.now
   end
 
   # sends activation email
@@ -75,8 +76,7 @@ class User < ActiveRecord::Base
   # sets the password reset attributes
   def create_reset_digest
     self.reset_token = User.new_token
-    update_attribute :reset_digest, User.digest(reset_token)
-    update_attribute :reset_sent_at, Time.zone.now
+    update_columns reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now
   end
 
   # sends password reset email
