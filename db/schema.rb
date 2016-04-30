@@ -11,10 +11,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160424151933) do
+ActiveRecord::Schema.define(version: 20160430153257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string   "company"
+    t.string   "street_name"
+    t.string   "street_no"
+    t.string   "zip"
+    t.string   "city"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "contact_person"
+    t.string   "vat_no"
+    t.string   "country_iso_code"
+    t.string   "website"
+    t.string   "state"
+    t.integer  "headcount"
+    t.text     "scope_of_experience"
+    t.text     "scope_of_work"
+    t.bit      "display",             limit: 1
+    t.integer  "user_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "addresses", ["user_id"], name: "index_addresses_on_user_id", using: :btree
+
+  create_table "posts", force: :cascade do |t|
+    t.integer  "content_type"
+    t.integer  "channel"
+    t.integer  "billing_type"
+    t.integer  "scope_hours"
+    t.text     "title"
+    t.text     "remarks"
+    t.text     "scope_of_work"
+    t.text     "scope_of_experience"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "hourly_payment"
+    t.integer  "currency"
+    t.bit      "anonymous",           limit: 1
+    t.integer  "address_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "posts", ["address_id"], name: "index_posts_on_address_id", using: :btree
+  add_index "posts", ["content_type", "channel", "created_at"], name: "index_posts_on_content_type_and_channel_and_created_at", using: :btree
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -37,4 +85,7 @@ ActiveRecord::Schema.define(version: 20160424151933) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "addresses", "users"
+  add_foreign_key "posts", "addresses"
+  add_foreign_key "posts", "users"
 end

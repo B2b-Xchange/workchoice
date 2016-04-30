@@ -1,0 +1,65 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content_type: 1
+  channel: 1
+  billing_type: 1
+  scope_hours: 1
+  title: Sad cats are sad
+  remarks: Sad cats are sad
+  scope_of_work: Sad cats are sad
+  scope_of_experience: Sad cats are sad
+  start_date: 2016-04-28
+  end_date: 2016-04-28
+  hourly_payment: 22
+  currency: 1
+  anonymous: false
+  created_at: <%= 10.minutes.ago %>
+
+two:
+  content_type: 1
+  channel: 1
+  billing_type: 1
+  scope_hours: 1
+  title: MyText
+  remarks: MyText
+  scope_of_work: MyText
+  scope_of_experience: MyText
+  start_date: 2016-04-28
+  end_date: 2016-04-28
+  hourly_payment: 1
+  currency: 1
+  anonymous: false
+  created_at: <%= 3.years.ago %>
+
+three:
+  content_type: 1
+  channel: 1
+  billing_type: 1
+  scope_hours: 10
+  title: test
+  remarks: test
+  scope_of_work: test
+  scope_of_experience: test
+  start_date: 2016-04-30
+  end_date: 2016-05-30
+  hourly_payment: 100
+  currency: 1
+  anonymous: false
+  created_at: <%= 2.hours.ago %>
+
+four:
+  content_type: 1
+  channel: 1
+  billing_type: 1
+  scope_hours: 20
+  title: example
+  remarks: example
+  scope_of_work: example
+  scope_of_experience: example
+  start_date: 2016-05-30
+  end_date: 2016-06-30
+  hourly_payment: 80
+  currency: 1
+  anonymous: false
+  created_at: <%= Time.zone.now %>

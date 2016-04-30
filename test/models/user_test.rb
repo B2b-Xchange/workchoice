@@ -70,5 +70,35 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?(:remember, '')
   end
   
-    
+  test "associated posts should be destroyed" do
+    @user.save
+    @user.posts.create!(content_type: 1, channel: 1,
+                        billing_type: 1, scope_hours: 100,
+                        title: "teste", remarks: "tester",
+                        scope_of_work: "tester",
+                        scope_of_experience: "tester",
+                        start_date: 60.minutes.ago,
+                        end_date: Time.zone.now,
+                        hourly_payment: 60, currency: 1,
+                        anonymous: 1)
+    assert_difference "Post.count", -1 do
+      @user.destroy
+    end
+  end
+
+  test "associated addresses should be destroyed" do
+    @user.save
+    @user.addresses.create!(email: "test@example.com",
+                            company: "tester",
+                            country_iso_code: "DE",
+                            street_name: "tester",
+                            street_no: "tester",
+                            zip: "zip",
+                            city: "city",
+                            contact_person: "Hey you tiger")
+    assert_difference "Address.count", -1 do
+      @user.destroy
+    end
+  end
+  
 end
