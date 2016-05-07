@@ -17,7 +17,7 @@ class Post < ActiveRecord::Base
   validates :scope_of_experience, length: { maximum: 2000 }
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :hourly_payment, numericality: { less_than: 500 }
+  validates :hourly_payment, numericality: { less_than: 50000 }
   validates :currency, presence: true,
             numericality: { less_than: 3 }
   # user must accept terms and conditions

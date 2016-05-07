@@ -91,6 +91,12 @@ class User < ActiveRecord::Base
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
   end
+
+  # Defines a proto feed
+  # See "Following users" for the full implementation
+  def feed
+    Post.where "user_id = ?", id
+  end
   
   
   private

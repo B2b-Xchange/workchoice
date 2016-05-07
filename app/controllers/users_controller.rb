@@ -5,8 +5,9 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
   
   def show
-    @user = User.find(params[:id])
-    redirect_to root_url and return unless @user.activated?
+    @user = User.find params[:id]
+    @posts = @user.posts.paginate page: params[:page]
+    
   end
   
   def new
@@ -56,15 +57,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password,
                                  :password_confirmation, :provider,
                                  :uid, :oauth_token, :oauth_expires_at)
-  end
-
-  # confirms a logged in user
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = "Please log in."
-      redirect_to login_url
-    end
   end
 
   # confirm the correct user

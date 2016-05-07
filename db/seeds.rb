@@ -25,3 +25,21 @@ User.create(name: "Test User",
                activated: true,
                activated_at: Time.zone.now)
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  title = Faker::Lorem.sentence(5)
+  users.each { |user| user.posts.create!(content_type: 1,
+                                         channel: 1,
+                                         billing_type: 1,
+                                         scope_hours: 20,
+                                         title: title,
+                                         remarks: title,
+                                         scope_of_experience: title,
+                                         scope_of_work: title,
+                                         start_date: 20.minutes.ago,
+                                         end_date: Time.zone.now,
+                                         hourly_payment: 6000,
+                                         currency: 1,
+                                         anonymous: false) }
+end

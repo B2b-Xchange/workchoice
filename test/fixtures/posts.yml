@@ -15,6 +15,7 @@ one:
   currency: 1
   anonymous: false
   created_at: <%= 10.minutes.ago %>
+  user: marco
 
 two:
   content_type: 1
@@ -31,6 +32,7 @@ two:
   currency: 1
   anonymous: false
   created_at: <%= 3.years.ago %>
+  user: marco
 
 three:
   content_type: 1
@@ -47,6 +49,7 @@ three:
   currency: 1
   anonymous: false
   created_at: <%= 2.hours.ago %>
+  user: marco
 
 four:
   content_type: 1
@@ -63,3 +66,24 @@ four:
   currency: 1
   anonymous: false
   created_at: <%= Time.zone.now %>
+  user: marco
+
+<% 30.times do |n| %>
+post_<%= n %>:
+  content_type: 1
+  channel: 1
+  billing_type: 1
+  scope_hours: <%= n %>
+  title: My title
+  remarks: My remaks
+  scope_of_work: My scope of work
+  scope_of_experience: My scope of experience
+  start_date: <%= Time.zone.now %>
+  end_date: <%= n.days.from_now %>
+  hourly_payment: <%= n %>
+  currency: 1
+  anonymous: false
+  created_at: <%= 42.days.ago %>
+  user: marco
+<% end %>
+  
