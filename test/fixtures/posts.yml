@@ -32,7 +32,7 @@ two:
   currency: 1
   anonymous: false
   created_at: <%= 3.years.ago %>
-  user: marco
+  user: jonathan
 
 three:
   content_type: 1
