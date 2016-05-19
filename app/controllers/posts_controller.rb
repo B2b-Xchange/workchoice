@@ -5,6 +5,8 @@ class PostsController < ApplicationController
   
   def create
     @post = current_user.posts.build(post_params)
+    # store money values in minor units
+    @post.hourly_payment *= 100
     if @post.save
       flash[:success] = "Post created!"
       redirect_to root_url
@@ -42,7 +44,8 @@ class PostsController < ApplicationController
                                  :currency,
                                  :anonymous,
                                  :address,
-                                 :picture)
+                                 :picture,
+                                 :document)
   end
 
   def correct_user
