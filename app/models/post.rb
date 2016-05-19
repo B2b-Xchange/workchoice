@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   belongs_to :address
   belongs_to :user
   default_scope -> { order created_at: :desc }
+  mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
   validates :content_type, presence: true,
             numericality: { less_than: 3 }
@@ -22,7 +23,17 @@ class Post < ActiveRecord::Base
             numericality: { less_than: 3 }
   # user must accept terms and conditions
   validates :terms_and_contitions, acceptance: true
+  validate :picture_size
+  
 
+  private
+
+  # validates the size of an uploaded image
+  def picture_size
+    if picture.size > 5.megabytes
+      errors.add :picture, "should be less then 5 MB"
+    end
+  end
   
   
 end

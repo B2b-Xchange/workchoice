@@ -41,7 +41,8 @@ class PostsController < ApplicationController
                                  :hourly_payment,
                                  :currency,
                                  :anonymous,
-                                 :address)
+                                 :address,
+                                 :picture)
   end
 
   def correct_user

@@ -12,3 +12,5 @@
 !/log/.keep
 /tmp
 .env
+# Ignore uploaded test images
+/public/uploads

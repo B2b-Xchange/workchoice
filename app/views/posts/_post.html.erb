@@ -11,7 +11,10 @@
     <% elsif post.content_type == 2 %>
     (Free resources)
     <% end %>
+
+    <%= image_tag post.picture.url if post.picture? %>
   </span>
+  
   <span class="title"><%= post.start_date.to_s :long %> -
   <%= post.end_date.to_s :long %></span>
   <span class="title">Hourly payment: <%= post.hourly_payment / 100 %> EUR</span>
