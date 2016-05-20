@@ -11,6 +11,8 @@ class PostsController < ApplicationController
       flash[:success] = "Post created!"
       redirect_to root_url
     else
+      # reset hourly payment when an error happened
+      @post.hourly_payment /= 100
       @feed_items = []
       render 'static_pages/home'
     end
