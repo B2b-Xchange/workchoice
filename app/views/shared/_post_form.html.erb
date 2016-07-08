@@ -42,6 +42,9 @@
 </div>
 <div class="field">
   <%= f.text_field :hourly_payment, placeholder: "Hourly payment" %>
+</div>
+<div class="field">
+  <%= f.label :currency %>
   <%= f.select(:currency, [['EUR', 1]]) %>
 </div>
 <div class="checkbox">

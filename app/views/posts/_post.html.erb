@@ -5,7 +5,7 @@
   <span class="user"><%= link_to post.user.name,
                          post.user %></span>
   <span class="title">
-    <%= post.title %>
+    <%= link_to post.title, post %>
     <% if post.content_type == 1 %>
     (Project)
     <% elsif post.content_type == 2 %>

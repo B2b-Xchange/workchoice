@@ -26,6 +26,12 @@ class PostsController < ApplicationController
     redirect_to request.referer || root_url
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @user = current_user
+  end
+  
+
   # TODO: add test if address belongs to user on change
   
 
