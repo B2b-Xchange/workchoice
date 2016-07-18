@@ -1,0 +1,25 @@
+
+<% provide :title, 'All addresses' %>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user-info">
+      <%= render 'shared/user_info' %>
+    </section>
+    <section class="address_form">
+      <h4>New address</h4>
+      <%= render 'form' %>
+    </section>
+  </aside>
+  
+  <div class="col-md-8">
+    <h3>Addresses</h3>
+    <% if @user.addresses.any? %>
+    <ol class="addresses">
+      <%= render @addresses %>
+    </ol>
+    <%= will_paginate @addresses %>
+    <% end %>
+  </div>
+</div>
+

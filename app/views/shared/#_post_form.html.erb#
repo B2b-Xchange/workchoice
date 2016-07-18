@@ -1,0 +1,86 @@
+
+<%= form_for @post, html: { multipart: true } do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<div>
+  <%= f.label :content_type %>
+  <%= f.select(:content_type,
+      [['Project', 1], ['Free resources', 2]],
+      class: 'form-control') %>
+</div>
+<div>
+  <%= f.label :channel %>
+  <%= f.select(:channel, [['Tax advisor', 1]],
+      class: 'form-control') %>
+</div>
+<div>
+  <%= f.label :billing_type, "Publishing option" %>
+  <%= f.select(:billing_type, [['Free', 1]],
+      class: 'form-control') %>
+</div>
+
+<div class="field">
+  <%= f.text_area :title, placeholder: "Title" %>
+</div>
+<div class="field">
+  <%= f.text_field :scope_hours, placeholder: "Scope in hours" %>
+</div>
+<div class="field">
+  <%= f.text_area :remarks, placeholder: "Remarks" %>
+</div>
+<div class="field">
+  <%= f.text_area :scope_of_work, placeholder: "Scope of work" %>
+</div>
+<div class="field">
+  <%= f.text_area(:scope_of_experience,
+      placeholder: "Scope of experience") %>
+</div>
+<div class="field">
+  <%= f.date_field :start_date, placeholder: "Assignment start date" %>
+</div>
+<div class="field">
+  <%= f.date_field :end_date, placeholder: "Assignment end date" %>
+</div>
+<div class="field">
+  <%= f.text_field :hourly_payment, placeholder: "Hourly payment" %>
+</div>
+<div class="field">
+  <%= f.label :currency %>
+  <%= f.select(:currency, [['EUR', 1]]) %>
+</div>
+<div class="checkbox">
+  <%= f.label :anonymous do %>
+  <%= f.check_box :anonymous %>
+  Anonymous post
+  <% end %>
+</div>
+
+
+<%= f.submit "Post", class: "btn btn-primary" %>
+
+<span class="picture">
+  <%= f.label :picture %>
+  <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'  %>
+</span>
+<span class="document">
+  <%= f.label :document %>
+  <%= f.file_field :document, accept: 'application/pdf' %>
+</span>
+
+<% end %>
+
+<script type="text/javascript">
+  $('#post_picture').bind('change', function() {
+  var size_in_megabytes = this.files[0].size/1024/1024;
+  if (size_in_megabytes > 5) {
+  alert('Maximum file size is 5 MB. Please choose a smaller file.');
+  }
+  });
+
+  $('#post_document').bind('change', function() {
+  var size_in_megabytes = this.files[0].size/1024/1024;
+  if (size_in_megabytes > 5) {
+  alert('Maximum file size is 5 MB. Please choose a smaller file.');
+  }
+  });
+  
+</script>

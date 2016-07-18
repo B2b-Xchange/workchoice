@@ -1,0 +1,16 @@
+
+<li id="address-<%= address.id %>">
+  <%= link_to gravatar_for(address.user, size: 50), address.user %>
+  <span class="address">
+    <%= link_to address.user.name, address.user %>
+  </span>
+  <span class="title">
+    Contact person: <%= address.contact_person %>&nbsp;Contact email: &nbsp;<%= address.email %>
+  </span>
+  <span class="timestamp">
+    Created <%= time_ago_in_words address.created_at %> ago.
+    <%= link_to "delete", address, method: :delete,
+        data: { confirm: "Your sure?" } %>
+  </span>
+  
+</li>

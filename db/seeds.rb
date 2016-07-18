@@ -43,3 +43,25 @@ users = User.order(:created_at).take(6)
                                          currency: 1,
                                          anonymous: false) }
 end
+
+50.times do
+  users.each { |user|
+    user.addresses.create!(company: "company test",
+                           street_name: "street name test",
+                           street_no: "street no test",
+                           zip: "zip test",
+                           city: "city test",
+                           phone: "phone test",
+                           email: "test@example.com",
+                           contact_person: "contact person test",
+                           vat_no: "VAT no test",
+                           country_iso_code: "DE",
+                           website: "website test",
+                           state: "state test",
+                           headcount: "headcount test",
+                           scope_of_experience: "scope of experience test",
+                           scope_of_work: "scope of work test",
+                           display: 1 ) }
+                           
+                                             
+end

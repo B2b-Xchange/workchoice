@@ -10,14 +10,15 @@ one:
   email: MyString
   contact_person: MyString
   vat_no: MyString
-  country_iso_code: MyString
+  country_iso_code: 81
   website: MyString
   state: MyString
   headcount: 1
   scope_of_experience: MyText
   scope_of_work: MyText
-  display: 
-  user_id: 
+  display: false
+  created_at: <%= 10.minutes.ago %>
+  user: marco
 
 two:
   company: MyString
@@ -29,11 +30,34 @@ two:
   email: MyString
   contact_person: MyString
   vat_no: MyString
-  country_iso_code: MyString
+  country_iso_code: 81
   website: MyString
   state: MyString
   headcount: 1
   scope_of_experience: MyText
   scope_of_work: MyText
-  display: 
-  user_id: 
+  display: false
+  created_at: <%= 3.years.ago %>
+  user: marco
+
+<% 30.times do |n| %>
+address_<%= n %>:
+  company: test company
+  street_name: test street name
+  street_no: test street no
+  zip: 12345
+  city: test city
+  phone: test phone
+  email: example-<%= n %>@testuser.com
+  contact_person: contact person test
+  vat_no: VAT no test
+  country_iso_code: 81
+  website: website test
+  state: state test
+  headcount: 30
+  scope_of_experience: scope of experience test
+  scope_of_work: scope of work test
+  display: false
+  created_at: <%= 42.days.ago %>
+  user: marco
+<% end %>   

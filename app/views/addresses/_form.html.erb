@@ -1,0 +1,59 @@
+
+<%= form_for @address do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<div class="field">
+  <%= f.text_field :email, placeholder: "Contact email" %>
+</div>
+<div class="field">
+  <%= f.text_field :contact_person, placeholder: "Contact person" %>
+</div>
+<div class="field">
+  <%= f.text_field :company, placeholder: "Company" %>
+</div>
+<div class="field">
+  <%= f.text_field :street_name, placeholder: "Street name" %>
+</div>
+<div class="field">
+  <%= f.text_field :street_no, placeholder: "Street no." %>
+</div>
+<div class="field">
+  <%= f.text_field :zip, placeholder: "Post code" %>
+</div>
+<div class="field">
+  <%= f.text_field :city, placeholder: "City" %>
+</div>
+<div class="field">
+  <%= f.text_field :phone, placeholder: "Phone" %>
+</div>
+<div class="field">
+  <%= f.text_field :vat_no, placeholder: "Vat no." %>
+</div>
+<div>
+  <%= f.label :country_iso_code, "Country" %>
+  <%= f.select(:country_iso_code, [['Germany', 'DE']],
+      class: 'form-control') %>
+</div>
+<div class="field">
+  <%= f.text_field :website, placeholder: "Website" %>
+</div>
+<div class="field">
+  <%= f.text_field :state, placeholder: "State or region" %>
+</div>
+<div class="field">
+  <%= f.text_field :headcount, placeholder: "Head count" %>
+</div>
+<div class="field">
+  <%= f.text_area :scope_of_experience, placeholder: "Scope of experience" %>
+</div>
+<div class="field">
+  <%= f.text_area :scope_of_work, placeholder: "Scope of work" %>
+</div>
+<div class="checkbox">
+  <%= f.label :display do %>
+  <%= f.check_box :display %>
+  Display in posts
+  <% end %>
+</div>
+<%= f.submit "Add address", class: "btn btn-primary" %>
+
+<% end %>

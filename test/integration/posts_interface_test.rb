@@ -13,7 +13,8 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
     # invalid submission
     assert_no_difference 'Post.count' do
       post posts_path, post: { title: "",
-                               remarks: "" }
+                               remarks: "",
+                               hourly_payment: 0 }
     end
     assert_select 'div#error_explanation'
     # valid submission
@@ -32,7 +33,9 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
                                end_date: Time.zone.now + 6.days,
                                hourly_payment: hourly_payment * 100,
                                currency: 1,
-                               anonymous: 0 }
+                               anonymous: 0,
+                               picture: "",
+                               document: "" }
     end
     assert_redirected_to root_url
     follow_redirect!
