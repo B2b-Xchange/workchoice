@@ -20,12 +20,19 @@ Rails.application.routes.draw do
   get 'auth/facebook/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'auth/linkedin/callback', to: 'sessions#create'
+
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :posts, only: [:create, :destroy, :show]
   resources :addresses
+  resources :relationships, only: [:create, :destroy]
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

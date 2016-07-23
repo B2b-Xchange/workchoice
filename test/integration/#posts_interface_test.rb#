@@ -34,7 +34,8 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
                                hourly_payment: hourly_payment * 100,
                                currency: 1,
                                anonymous: 0,
-                               user_id: @user.id }
+                               user_id: @user.id,
+                             }
     end
     assert_redirected_to root_url
     follow_redirect!

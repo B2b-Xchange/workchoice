@@ -23,7 +23,7 @@ class Post < ActiveRecord::Base
   validates :currency, presence: true,
             numericality: { less_than: 3 }
   # user must accept terms and conditions
-  validates :terms_and_contitions, acceptance: true
+  validates :terms_and_conditions, acceptance: true
   validate :picture_size
   validate :document_size
   
