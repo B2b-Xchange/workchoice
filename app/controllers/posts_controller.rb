@@ -6,13 +6,19 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     # store money values in minor units
-    @post.hourly_payment *= 100
+    if @post.hourly_payment
+      @post.hourly_payment *= 100
+    end
+    
     if @post.save
       flash[:success] = "Post created!"
       redirect_to root_url
     else
       # reset hourly payment when an error happened
-      @post.hourly_payment /= 100
+      if @post.hourly_payment
+        @post.hourly_payment /= 100
+      end
+      
       @feed_items = []
       render 'static_pages/home'
     end

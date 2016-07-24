@@ -53,6 +53,10 @@
   Anonymous post
   <% end %>
 </div>
+<div>
+  <%= f.label :address_id, "Contact" %>
+  <%= f.collection_select(:address_id, Address.where("user_id = ?", session[:user_id]), :id, :contact_person) %>
+</div>
 
 
 <%= f.submit "Post", class: "btn btn-primary" %>
