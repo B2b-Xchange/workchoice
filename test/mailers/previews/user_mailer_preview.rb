@@ -17,4 +17,14 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.password_reset user
   end
 
+  # http://localhost:3000/rails/mailers/user_mailer/contact_request
+  def contact_request
+
+    to = User.first
+    from = User.second
+    post = Post.first
+    message = "Testnachricht. Test Test Test."
+    UserMailer.contact_request from, to, post, message
+  end
+  
 end

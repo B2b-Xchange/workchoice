@@ -13,7 +13,7 @@ class Post < ActiveRecord::Base
   validates :billing_type, presence: true,
             numericality: { less_than: 2 }
   validates :scope_hours, numericality: { less_than: 160, greater_than: 0 }
-  validates :title, length: { maximum: 1000 }
+  validates :title, presence: true, length: { maximum: 1000 }
   validates :remarks, length: { maximum: 2000 }
   validates :scope_of_work, length: { maximum: 2000 }
   validates :scope_of_experience, length: { maximum: 2000 }

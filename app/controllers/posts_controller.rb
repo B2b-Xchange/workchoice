@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy, :show]
   before_action :correct_user, only: :destroy
   
   def create
@@ -34,6 +34,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    if @post.hourly_payment
+      @post.hourly_payment /= 100
+    end
     @user = current_user
   end
   
@@ -57,7 +60,7 @@ class PostsController < ApplicationController
                                  :hourly_payment,
                                  :currency,
                                  :anonymous,
-                                 :address,
+                                 :address_id,
                                  :picture,
                                  :document)
   end

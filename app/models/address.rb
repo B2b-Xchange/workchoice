@@ -14,7 +14,7 @@ class Address < ActiveRecord::Base
   validates :zip, length: { maximum: 255 }
   validates :city, length: { maximum: 255 }
   validates :phone, length: { maximum: 255 }
-  validates :contact_person, length: { maximum: 255 }
+  validates :contact_person, presence: true, length: { maximum: 255 }
   validates :vat_no, length: { maximum: 255 }
   validates :website, length: { maximum: 255 }
   validates :state, length: { maximum: 255 }

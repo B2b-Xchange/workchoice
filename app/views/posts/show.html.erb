@@ -3,24 +3,36 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
+        <%= gravatar_for @post.user %>
+        <%= @post.user.name %>
       </h1>
     </section>
   </aside>
   <div class="col-md-8">
-    <div class="panel panel-primary" style="margin-top: 20px;">
-      <div class="panel-heading">
-        <h3><%= @post.title %></h3>
-        <a href="#" style="color: orange;">contact</a>
-      </div>
-      <div class="pabel-body" style="padding: 10px;">
+    <h1><%= @post.title %></h1>
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active">
+        <a href="#post" aria-controls="Post" role="tab"
+           data-toggle="tab">
+          Post
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#contact" aria-controls="Contact" role="tab"
+           data-toggle="tab">
+          Contact
+        </a>
+      </li>
+    </ul>  
+      
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="post">
         <h4>Post type</h4>
         <p>
           <% if @post.content_type = 1 %>
           Project
           <% else %>
-          Free resources
+          Available resources
           <% end %>
         </p>
         <h4>Channel</h4>
@@ -33,18 +45,24 @@
         <p>
           <%= @post.scope_hours %>&nbsp;h
         </p>
+        <% if @post.remarks.length > 0 %>
         <h4>Remarks</h4>
         <p>
           <%= @post.remarks %>
         </p>
+        <% end %>
+        <% if @post.scope_of_work.length > 0 %>
         <h4>Scope of work</h4>
         <p>
           <%= @post.scope_of_work %>
         </p>
+        <% end %>
+        <% if @post.scope_of_experience.length > 0 %>
         <h4>Scope of experience</h4>
         <p>
           <%= @post.scope_of_experience %>
         </p>
+        <% end %>
         <h4>Time frame</h4>
         <p>
           <%= @post.start_date %> - <%= @post.end_date %>
@@ -56,17 +74,62 @@
           EUR
           <% end %>
         </p>
+        <% if @post.document.length > 0 %>
         <h4>Document</h4>
         <p>
-          <% if @post.document.length > 0 %>
           <%= @post.document %>
-          <% else %>
-          None
-          <% end %>
         </p>
-        <h4>Contact</h4>
-        Follows
+        <% end %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="contact">
+        <% if @post.address && @post.address.display? %>
+        <h4>Address</h4>
+        <p><%= @post.address.company %><br />
+          <%= @post.address.street_name %>
+          &nbsp;<%= @post.address.street_no %><br />
+        <%= @post.address.zip %>&nbsp;<%= @post.address.city %><br />
+        <%= @post.address.country_iso_code %></p>
+        <% if @post.address.phone.length > 0 %>
+        <h4>Phone</h4>
+        <p><%= @post.address.phone %></p>
+        <% end %>
+        <% if @post.address.email.length > 0 %>
+        <h4>E-mail</h4>
+        <p><%= @post.address.email %></p>
+        <% end %>
+        <h4>Contact person</h4>
+        <p><%= @post.address.contact_person %></p>
+        <% if @post.address.vat_no.length > 0 %>
+        <h4>VAT no.</h4>
+        <p><%= @post.address.vat_no %></p>
+        <% end %>
+        <% if @post.address.website.length > 0 %>
+        <h4>Website</h4>
+        <p><%= @post.address.website %></p>
+        <% end %>
+        <% if @post.address.headcount > 0 %>
+        <h4>Headcount</h4>
+        <p><%= @post.address.headcount %></p>
+        <% end %>
+        <% if @post.address.scope_of_experience.length > 0 %>
+        <h4>Scope of experience</h4>
+        <p><%= @post.address.scope_of_experience %></p>
+        <% end %>
+        <% if @post.address.scope_of_work.length > 0 %>
+        <h4>Scope of work</h4>
+        <p><%= @post.address.scope_of_work %></p>
+        <% end %>
+        <% else %>
+
+        <%= form_tag "/contacts", html: { class: 'form-horizontal' } do %>
+        <%= label_tag "Please use this contact form." %>
+        <%= text_area_tag  :message, nil, rows: 10 %>
+        <%= hidden_field_tag 'post_id',  @post.id %>
+        <%= submit_tag "Send", class: 'btn btn-primary' %>
+        <% end %>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+

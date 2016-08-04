@@ -21,4 +21,14 @@ class UserMailer < ApplicationMailer
 
     mail to: user.email, subject: "Password reset"
   end
+
+  def contact_request(from, to, post, message)
+    @from = from
+    @to = to
+    @post = post
+    @message = message
+
+    mail to: to.email, subject: "Contact request: " + post.title
+  end
+  
 end

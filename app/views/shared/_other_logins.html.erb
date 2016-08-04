@@ -1,0 +1,20 @@
+
+<script>(function(d) {
+  var js, id='lwx';
+  if (d.getElementById(id)) return;
+  js = d.createElement('script'); js.id = id; js.src = "https://www.xing-share.com/plugins/login.js";
+  d.getElementsByTagName('head')[0].appendChild(js)
+  }(document));
+</script>
+<div style="float: right; padding-top: 15px; padding-left: 10px;">
+  <%= link_to(image_tag("Sign-In-Small---Active.png",
+      alt: "Continue with linkedin", height: "22"), '/auth/linkedin',
+      id: "continue-with-linkedin")  %>
+ 
+</div>
+<div style="float: right; padding-top: 15px; padding-left: 10px;">
+    <script type="xing/login">
+      { "consumer_key": "fc81e6bcf4c587baa010"  }
+    </script>
+  
+</div>
