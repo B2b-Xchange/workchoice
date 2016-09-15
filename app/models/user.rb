@@ -57,14 +57,17 @@ class User < ActiveRecord::Base
   # Omniauth create method
   def self.create_with_omniauth(auth)
 
-    user = User.where(uid: auth['uid'], provider: auth['provider']).first_or_create(email: auth['info']['email'],
-                                                                                    name: auth['info']['name'],
-                                                                                    password: auth['credentials']['token'],
-                                                                                    password_confirmation: auth['credentials']['token'],
-                                                                                    oauth_token: auth['credentials']['token'],
-                                                                                    oauth_expires_at: auth['credentials']['expires_at'],
-                                                                                    activated: true,
-                                                                                    activated_at: Time.zone.now)
+    user = User.where(email: auth['info']['email'])
+           .first_or_create(email: auth['info']['email'],
+                            name: auth['info']['name'],
+                            password: auth['credentials']['token'],
+                            password_confirmation: auth['credentials']['token'],
+                            oauth_token: auth['credentials']['token'],
+                            oauth_expires_at: auth['credentials']['expires_at'],
+                            activated: true,
+                            activated_at: Time.zone.now,
+                            uid: auth['uid'],
+                            provider: auth['provider'])
     
     if user.persisted?
       user

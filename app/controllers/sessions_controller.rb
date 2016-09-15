@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def create
 
-    # 18/04/2016 ADDED OMNIAUTH
+    # 18/04/2016 ADD OMNIAUTH
     if request.env['omniauth.auth']
       user = User.create_with_omniauth request.env['omniauth.auth']
       log_in user
