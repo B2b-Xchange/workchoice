@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       log_in user
       remember user
       redirect_to user
+
     else
       
       user = User.find_by email: params[:session][:email].downcase

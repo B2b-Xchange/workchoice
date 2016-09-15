@@ -1,40 +1,40 @@
 Rails.application.routes.draw do
 
+  get '/:locale' => 'static_pages#home'
   root 'static_pages#home'
 
-  get 'help' => 'static_pages#help'
+  scope "(:locale)" do
+    get 'home' => 'static_pages#home'
+    get 'help' => 'static_pages#help'
+    get 'about' => 'static_pages#about'
+    get 'contact' => 'static_pages#contact'
+    get 'tac' => 'static_pages#tac'
+    get 'signup' => 'users#new'
+    get 'login' => 'sessions#new'
+    post 'login' => 'sessions#create'
+    delete 'logout' => 'sessions#destroy'
 
-  get 'about' => 'static_pages#about'
+    resources :users do
+      member do
+        get :following, :followers
+      end
+    end
+  
+    resources :users
+    resources :account_activations, only: [:edit]
+    resources :password_resets, only: [:new, :create, :edit, :update]
+    resources :posts, only: [:create, :destroy, :show]
+    resources :addresses
+    resources :relationships, only: [:create, :destroy]
+    resources :contacts, only: [:create]
+  end
 
-  get 'contact' => 'static_pages#contact'
-
-  get 'tac' => 'static_pages#tac'
-
-  get 'signup' => 'users#new'
-
-  get 'login' => 'sessions#new'
-  post 'login' => 'sessions#create'
-  delete 'logout' => 'sessions#destroy'
-
-  #Oauth routes
-  get 'auth/facebook/callback', to: 'sessions#create'
+  # Oauth routes
+  # get 'auth/facebook/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'auth/linkedin/callback', to: 'sessions#create'
+  get 'auth/xing/callback', to: 'sessions#create'
 
-  resources :users do
-    member do
-      get :following, :followers
-    end
-  end
-  
-  resources :users
-  resources :account_activations, only: [:edit]
-  resources :password_resets, only: [:new, :create, :edit, :update]
-  resources :posts, only: [:create, :destroy, :show]
-  resources :addresses
-  resources :relationships, only: [:create, :destroy]
-  resources :contacts, only: [:create]
-  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

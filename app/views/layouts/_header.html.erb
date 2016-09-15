@@ -1,36 +1,36 @@
 <header class="navbar navbar-fixed-top navbar-right">
   <div class="container">
-    <%= link_to image_tag("workchoice-logo-sx.svg", alt: "Workchoice logo", size: "40"), root_path, id: "logo", style: "float: left; padding-top: 8px" %>
+    <%= link_to image_tag("workchoice-logo-sx.svg", alt: t(:workchoice_logo_alt), size: "40"), home_path, id: "logo", style: "float: left; padding-top: 8px" %>
     <h4 style="float: left; padding-top: 8px; color: rgb(181, 55,58);">Workchoice</h4>
 
     <%= link_to image_tag("Flag_of_the_United_Kingdom.svg",
-        alt: "English version", size: "40"), '#', id:
+        alt: "English version", size: "40"), url_for(locale: 'en'), id:
         "english-page", style: "float: right; padding-top: 8px;
                                 padding-left: 15px; padding-right: 15px;" %>
     <%= link_to image_tag("Flag_of_Germany.svg", alt:
-        "German version", size: "40"), '#', id: "german-page",
+        "Deutsche Seite", size: "40"), url_for(locale: 'de'), id: "german-page",
         style: "float: right; padding-top: 8px; padding-left: 30px;" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-        <li><%= link_to "Users", users_path %></li>
+        <li><%= link_to t(:link_to_users), users_path %></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            Account <b class="caret"></b>
+            <%= t :account_dropdown_toggle %> <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to "Addresses", addresses_path %></li>
-            <li><%= link_to "My posts", root_path  %></li>
-            <li><%= link_to "Profile", current_user %></li>
-            <li><%= link_to "Settings", edit_user_path(current_user)  %></li>
+            <li><%= link_to t(:addresses_dropdown_menu), addresses_path %></li>
+            <li><%= link_to t(:my_posts_dropdown_menu), root_path  %></li>
+            <li><%= link_to t(:profile_dropdown_menu), current_user %></li>
+            <li><%= link_to t(:settings_dropdown_menu), edit_user_path(current_user)  %></li>
             <li class="divider"></li>
             <li>
-              <%= link_to "Log out", logout_path, method: "delete" %>
+              <%= link_to t(:log_out_link), logout_path, method: "delete" %>
             </li>
           </ul>
         </li>
         <% else %>
-        <li><%= link_to "Log in", login_path %></li>
+        <li><%= link_to t(:log_in_link), login_path %></li>
         <% end %>
       </ul>
     </nav>

@@ -46,25 +46,29 @@ group :development do
   gem 'faker'
 end
 
-# 01/04/2016 added
+# 01/04/2016 add
 group :production do
   gem 'rails_12factor'
 end
 
-# 01/04/2016 added heroku production server
+# 01/04/2016 add heroku production server
 gem 'puma'
 
 gem 'minitest-reporters'
 
-# 02/04/2016 added bootstrap
+# 02/04/2016 add bootstrap
 gem 'bootstrap-sass'
 
 # 17/04/2016 facebook integration
 gem 'omniauth'
-gem 'omniauth-facebook'
+# gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
+gem 'omniauth-xing'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+
+# 13/09/2016 add gems for localization
+gem 'http_accept_language'

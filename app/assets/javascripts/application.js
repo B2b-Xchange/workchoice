@@ -15,8 +15,3 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
-
-function onXingAuthLogin(response) {
-    // redirect to callback
-    
-}

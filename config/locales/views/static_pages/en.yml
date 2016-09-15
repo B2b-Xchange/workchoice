@@ -1,0 +1,20 @@
+# static_pages.en
+en:
+  # _other_logins.html.erb
+  login_with_xing: Login with Xing
+  login_with_linkedin: Login with Linkedin
+  # _header.html.erb
+  workchoice_logo_alt: Workchoice logo
+  link_to_users: Users
+  account_dropdown_toggle: Account
+  addresses_dropdown_menu: Addresses
+  my_posts_dropdown_menu: My posts
+  profile_dropdown_menu: Profile
+  settings_dropdown_menu: Settings
+  log_out_link: Log out
+  log_in_link: Log in
+  # _footer.html.erb
+  about_link: About
+  contact_link: Contact
+  tac_link: Terms & Conditions
+  help_link: Help
