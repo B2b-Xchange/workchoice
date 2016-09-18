@@ -18,3 +18,6 @@ en:
   contact_link: Contact
   tac_link: Terms & Conditions
   help_link: Help
+  # home.html.erb
+  followed_filter_button: Followed
+  all_filter_button: All

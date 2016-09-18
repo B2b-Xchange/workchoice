@@ -18,3 +18,6 @@ de:
   contact_link: Kontakt
   tac_link: AGB
   help_link: Hilfe
+  # home.html.erb
+  followed_filter_button: Abonnierte
+  all_filter_button: Alle

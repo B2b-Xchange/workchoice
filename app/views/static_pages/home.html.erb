@@ -14,6 +14,23 @@
     </section>
   </aside>
   <div class="col-md-8">
+    <span style="float: right;">
+      <ul class="nav nav-pills">
+        <li role="presentation"
+            <% if params['filter'] != 'all' %>
+            class="active"
+            <% end %>>
+          <a href="<%= url_for filter: 'followed' %>"><%= t :followed_filter_button %></a>
+        </li>
+        <li role="presentation"
+            <% if params['filter'] == 'all' %>
+            class="active"
+            <% end %>>
+          <a href="<%= url_for filter: 'all' %>"><%= t :all_filter_button %></a>
+        </li>
+      </ul>
+    </span>
+    
     <h3>Post Feed</h3>
     <%= render 'shared/feed' %>
   </div>
