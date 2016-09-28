@@ -1,0 +1,19 @@
+
+en:
+  # new.html.erb
+  user_new_title: Sign up
+  user_new_h: Sign up
+  user_new_submit: Create my account
+  # _form.html.erb
+  user_form_name: Name
+  user_form_email: Email
+  user_form_password: Password
+  user_form_password_confirmation: Password confirmation
+  # password_resets/new.html.erb
+  password_resets_title: Forgot password
+  password_resets_h: Forgot password
+  password_resets_email: Email
+  password_resets_submit: Submit
+  # _stats.html.erb
+  user_stats_following: following
+  user_stats_followers: followers

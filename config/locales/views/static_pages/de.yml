@@ -8,16 +8,48 @@ de:
   link_to_users: Alle Benutzer
   account_dropdown_toggle: Mein Workchoice
   addresses_dropdown_menu: Adressen
-  my_posts_dropdown_menu: Meine Anzeigen
+  my_posts_dropdown_menu: Meine Artikel
   profile_dropdown_menu: Profil
   settings_dropdown_menu: Einstellungen
   log_out_link: Abmelden
-  log_in_link: Log in
+  log_in_link: Login
   # _footer.html.erb
   about_link: Über uns
   contact_link: Kontakt
   tac_link: AGB
   help_link: Hilfe
   # home.html.erb
-  followed_filter_button: Abonnierte
+  followed_filter_button: Folgend
   all_filter_button: Alle
+  # _user_info.html.erb
+  view_profile_link: Zeige mein Profil
+  post_count:
+    one: einen Artikel
+    other: "%{count} Artikel"
+  # _post.form.html.erb
+  post_form_request_help: Biete Projekt
+  post_form_offer_help: Biete Resourcen
+  post_form_tax_advisor: Steuerberater
+  post_form_free: Kostenlos
+  post_form_submit: Artikel hinzufügen
+  post_form_file_size_error: Maximale Dateigröße ist 5 MB. Wähle bitte eine kleinere Datei.
+  # _follow.html.erb
+  follow_form_submit: Folgen
+  # _unfollow.html.erb
+  unfollow_form_submit: Nicht mehr folgen
+  # _user.html.erb
+  link_to_delete: Löschen
+  link_to_delete_data: Sicher?
+  # edit.html.erb
+  profile_edit_title: Benutzer bearbeiten
+  profile_edit_submit: Änderungen speichern
+  profile_edit_h: Dein Profil bearbeiten
+  profile_edit_gravatar: ändern
+  # index.html.erb
+  users_title: Alle Benutzer
+  users_h: Alle Benutzer
+  # show.html.erb
+  user_posts_show: Artikel
+  # show_follow.html.erb
+  follow_show_link_profile: Zu meinem Profil
+  follow_show_posts: Artikel

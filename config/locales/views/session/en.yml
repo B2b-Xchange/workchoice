@@ -1,0 +1,11 @@
+
+en:
+  session_title: Log in
+  session_h: Log in
+  session_email: Email
+  session_password: Password
+  session_password_forgot: (forgot password)
+  session_remember: Remember me on this computer
+  session_submit: Log in
+  session_new_user: New user?
+  session_signup: Sign up now!

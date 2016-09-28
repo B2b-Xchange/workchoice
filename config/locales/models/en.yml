@@ -1,0 +1,25 @@
+
+en:
+  activerecord:
+    models:
+      post:
+        one: Post
+        other: Posts
+    attributes:
+      post:
+        content_type: Content type
+        channel: Channel
+        billing_type: Publishing option
+        title: Title
+        scope_hours: Scope in hours
+        remarks: Remarks
+        scope_of_work: Scope of work
+        scope_of_experience: Scope of experience
+        start_date: Assignment start date
+        end_date: Assignment end date
+        hourly_payment: Hourly payment
+        currency: Currency
+        anonymous: Anonymous post
+        address_id: Contact
+        picture: Picture
+        document: Document

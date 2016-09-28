@@ -4,44 +4,44 @@
 <div>
   <%= f.label :content_type %>
   <%= f.select(:content_type,
-      [['Project', 1], ['Available resources', 2]],
+      [[t(:post_form_request_help), 1], [t(:post_form_offer_help), 2]],
       class: 'form-control') %>
 </div>
 <div>
   <%= f.label :channel %>
-  <%= f.select(:channel, [['Tax advisor', 1]],
+  <%= f.select(:channel, [[t(:post_form_tax_advisor), 1]],
       class: 'form-control') %>
 </div>
 <div>
-  <%= f.label :billing_type, "Publishing option" %>
-  <%= f.select(:billing_type, [['Free', 1]],
+  <%= f.label :billing_type %>
+  <%= f.select(:billing_type, [[t(:post_form_free), 1]],
       class: 'form-control') %>
 </div>
 
 <div class="field">
-  <%= f.text_area :title, placeholder: "Title" %>
+  <%= f.text_area :title, placeholder: Post.human_attribute_name("title") %>
 </div>
 <div class="field">
-  <%= f.text_field :scope_hours, placeholder: "Scope in hours" %>
+  <%= f.text_field :scope_hours, placeholder: Post.human_attribute_name("scope_hours") %>
 </div>
 <div class="field">
-  <%= f.text_area :remarks, placeholder: "Remarks" %>
+  <%= f.text_area :remarks, placeholder: Post.human_attribute_name("remarks") %>
 </div>
 <div class="field">
-  <%= f.text_area :scope_of_work, placeholder: "Scope of work" %>
+  <%= f.text_area :scope_of_work, placeholder: Post.human_attribute_name("scope_of_work") %>
 </div>
 <div class="field">
   <%= f.text_area(:scope_of_experience,
-      placeholder: "Scope of experience") %>
+      placeholder: Post.human_attribute_name("scope_of_experience")) %>
 </div>
 <div class="field">
-  <%= f.date_field :start_date, placeholder: "Assignment start date" %>
+  <%= f.date_field :start_date, placeholder: Post.human_attribute_name("start_date") %>
 </div>
 <div class="field">
-  <%= f.date_field :end_date, placeholder: "Assignment end date" %>
+  <%= f.date_field :end_date, placeholder: Post.human_attribute_name("end_date") %>
 </div>
 <div class="field">
-  <%= f.text_field :hourly_payment, placeholder: "Hourly payment" %>
+  <%= f.text_field :hourly_payment, placeholder: Post.human_attribute_name("hourly_payment") %>
 </div>
 <div class="field">
   <%= f.label :currency %>
@@ -50,16 +50,16 @@
 <div class="checkbox">
   <%= f.label :anonymous do %>
   <%= f.check_box :anonymous %>
-  Anonymous post
+  <%= Post.human_attribute_name("anonymous") %>
   <% end %>
 </div>
 <div>
-  <%= f.label :address_id, "Contact" %>
+  <%= f.label :address_id, Post.human_attribute_name("address_id") %>
   <%= f.collection_select(:address_id, Address.where("user_id = ?", session[:user_id]), :id, :contact_person) %>
 </div>
 
 
-<%= f.submit "Post", class: "btn btn-primary" %>
+<%= f.submit t(:post_form_submit), class: "btn btn-primary" %>
 
 <span class="picture">
   <%= f.label :picture %>
@@ -76,14 +76,14 @@
   $('#post_picture').bind('change', function() {
   var size_in_megabytes = this.files[0].size/1024/1024;
   if (size_in_megabytes > 5) {
-  alert('Maximum file size is 5 MB. Please choose a smaller file.');
+  alert(<%= t :post_form_file_size_error %>);
   }
   });
 
   $('#post_document').bind('change', function() {
   var size_in_megabytes = this.files[0].size/1024/1024;
   if (size_in_megabytes > 5) {
-  alert('Maximum file size is 5 MB. Please choose a smaller file.');
+  alert(<%= t :post_form_file_size_error %>);
   }
   });
   

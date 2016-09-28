@@ -21,3 +21,35 @@ en:
   # home.html.erb
   followed_filter_button: Followed
   all_filter_button: All
+  # _user_info.html.erb
+  view_profile_link: view my profile
+  post_count:
+    one: one post
+    other: "%{count} posts"
+  # _post.form.html.erb
+  post_form_request_help: Request for help 
+  post_form_offer_help: Offer free resources
+  post_form_tax_advisor: Tax advisor
+  post_form_free: Free
+  post_form_submit: Post
+  post_form_file_size_error: Maximum file size is 5 MB. Please choose a smaller file.
+  # _follow.html.erb
+  follow_form_submit: Follow
+  # _unfollow.html.erb
+  unfollow_form_submit: Unfollow
+  # _user.html.erb
+  link_to_delete: delete
+  link_to_delete_data: You sure?
+  # edit.html.erb
+  profile_edit_title: Edit User
+  profile_edit_submit: Save changes
+  profile_edit_h: Update your profile
+  profile_edit_gravatar: change
+  # index.html.erb
+  users_title: All users
+  users_h: All users
+  # show.html.erb
+  user_posts_show: Posts
+  # show_follow.html.erb
+  follow_show_link_profile: view my profile
+  follow_show_posts: Posts

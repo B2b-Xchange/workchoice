@@ -1,0 +1,25 @@
+
+de:
+  activerecord:
+    models:
+      post:
+        one: Artikel
+        other: Artikel
+    attributes:
+      post:
+        content_type: Artikelart
+        channel: Zielgruppe
+        billing_type: Veröffentlichungsoption
+        title: Titel
+        scope_hours: Arbeitsumfang in h
+        remarks: Hinweise
+        scope_of_work: Aufgabenumfang
+        scope_of_experience: Erfahrungsumfang
+        start_date: Anfangsdatum
+        end_date: Enddatum
+        hourly_payment: Stundensatz
+        currency: Währung
+        anonymous: Anonymer Artikel
+        address_id: Kontaktadresse
+        picture: Bilddatei
+        document: Dokumentenanhang
