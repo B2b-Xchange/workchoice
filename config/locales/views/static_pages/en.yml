@@ -21,6 +21,7 @@ en:
   # home.html.erb
   followed_filter_button: Followed
   all_filter_button: All
+  post_feed_h: Post feed
   # _user_info.html.erb
   view_profile_link: view my profile
   post_count:
@@ -53,3 +54,33 @@ en:
   # show_follow.html.erb
   follow_show_link_profile: view my profile
   follow_show_posts: Posts
+  # Posts show.html.erb
+  post_tab_post: Post
+  post_tab_contact: Contact
+  post_post_type: Post type
+  post_post_type_request_help: Request for help
+  post_post_type_offer_help: Offer free resources
+  post_channel: Channel
+  post_channel_tax_advisor: Tax advisor
+  post_estimated_work_hours: Estimated work hours
+  post_remarks: Remarks
+  post_scope_of_work: Scope of work
+  post_scope_of_experience: Scope of experience
+  post_time_frame: Time frame
+  post_hourly_payment: Hourly payment
+  post_document: Attachment
+  address_h: Address
+  address_phone: Phone
+  address_email: Email
+  address_contact_person: Contact person
+  address_vat_no: VAT no.
+  address_website: Website
+  address_headcount: Headcount
+  address_scope_of_experience: Scope of experience
+  address_scope_of_work: Scope of work
+  contact_form_label: Please use this contact form.
+  contact_form_submit: Send
+  # Posts _post.html.erb
+  post_posted: Posted %{date} ago.
+  post_link_delete: delete
+  post_link_data: You sure?

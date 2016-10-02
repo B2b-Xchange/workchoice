@@ -14,118 +14,118 @@
       <li role="presentation" class="active">
         <a href="#post" aria-controls="Post" role="tab"
            data-toggle="tab">
-          Post
+          <%= t :post_tab_post %>
         </a>
       </li>
       <li role="presentation">
         <a href="#contact" aria-controls="Contact" role="tab"
            data-toggle="tab">
-          Contact
+          <%= t :post_tab_contact %>
         </a>
       </li>
     </ul>  
       
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="post">
-        <h4>Post type</h4>
+        <h4><%= t :post_post_type %></h4>
         <p>
           <% if @post.content_type = 1 %>
-          Project
+          <%= t :post_post_type_request_help %>
           <% else %>
-          Available resources
+          <%= t :post_post_type_offer_help %>
           <% end %>
         </p>
-        <h4>Channel</h4>
+        <h4><%= t :post_channel %></h4>
         <p>
           <% if @post.channel = 1 %>
-          Tax advisor
+          <%= t :post_channel_tax_advisor %>
           <% end %>
         </p>
-        <h4>Estimated work hours</h4>
+        <h4><%= t :post_estimated_work_hours %></h4>
         <p>
           <%= @post.scope_hours %>&nbsp;h
         </p>
         <% if @post.remarks.length > 0 %>
-        <h4>Remarks</h4>
+        <h4><%= t :post_remarks %></h4>
         <p>
           <%= @post.remarks %>
         </p>
         <% end %>
         <% if @post.scope_of_work.length > 0 %>
-        <h4>Scope of work</h4>
+        <h4><%= t :post_scope_of_work %></h4>
         <p>
           <%= @post.scope_of_work %>
         </p>
         <% end %>
         <% if @post.scope_of_experience.length > 0 %>
-        <h4>Scope of experience</h4>
+        <h4><%= t :post_scope_of_experience %></h4>
         <p>
           <%= @post.scope_of_experience %>
         </p>
         <% end %>
-        <h4>Time frame</h4>
+        <h4><%= t :post_time_frame %></h4>
         <p>
           <%= @post.start_date %> - <%= @post.end_date %>
         </p>
-        <h4>Hourly payment</h4>
+        <h4><%= t :post_hourly_payment %></h4>
         <p>
           <%= @post.hourly_payment %>
           <% if @post.currency = 1 %>
           EUR
           <% end %>
         </p>
-        <% if @post.document.length > 0 %>
-        <h4>Document</h4>
+        <% if @post.document? %>
+        <!-- <h4><%= t :post_document %></h4> -->
         <p>
-          <%= @post.document %>
+          <%= link_to t(:post_document), @post.document.url %>
         </p>
         <% end %>
       </div>
       <div role="tabpanel" class="tab-pane" id="contact">
         <% if @post.address && @post.address.display? %>
-        <h4>Address</h4>
+        <h4><%= t :address_h %></h4>
         <p><%= @post.address.company %><br />
           <%= @post.address.street_name %>
           &nbsp;<%= @post.address.street_no %><br />
         <%= @post.address.zip %>&nbsp;<%= @post.address.city %><br />
         <%= @post.address.country_iso_code %></p>
         <% if @post.address.phone.length > 0 %>
-        <h4>Phone</h4>
+        <h4><%= t :address_phone %></h4>
         <p><%= @post.address.phone %></p>
         <% end %>
         <% if @post.address.email.length > 0 %>
-        <h4>E-mail</h4>
-        <p><%= @post.address.email %></p>
+        <h4><%= t :address_email %></h4>
+        <p><%= mail_to @post.address.email %></p>
         <% end %>
-        <h4>Contact person</h4>
+        <h4><%= t :address_contact_person %></h4>
         <p><%= @post.address.contact_person %></p>
         <% if @post.address.vat_no.length > 0 %>
-        <h4>VAT no.</h4>
+        <h4><%= t :address_vat_no %></h4>
         <p><%= @post.address.vat_no %></p>
         <% end %>
         <% if @post.address.website.length > 0 %>
-        <h4>Website</h4>
+        <h4><%= t :address_website %></h4>
         <p><%= @post.address.website %></p>
         <% end %>
         <% if @post.address.headcount > 0 %>
-        <h4>Headcount</h4>
+        <h4><%= t :address_headcount %></h4>
         <p><%= @post.address.headcount %></p>
         <% end %>
         <% if @post.address.scope_of_experience.length > 0 %>
-        <h4>Scope of experience</h4>
+        <h4><%= t :address_scope_of_experience %></h4>
         <p><%= @post.address.scope_of_experience %></p>
         <% end %>
         <% if @post.address.scope_of_work.length > 0 %>
-        <h4>Scope of work</h4>
+        <h4><%= t :address_scope_of_work %></h4>
         <p><%= @post.address.scope_of_work %></p>
         <% end %>
         <% else %>
 
         <%= form_tag "/contacts", html: { class: 'form-horizontal' } do %>
-        <%= label_tag "Please use this contact form." %>
+        <%= label_tag t(:contact_form_label) %>
         <%= text_area_tag  :message, nil, rows: 10 %>
         <%= hidden_field_tag 'post_id',  @post.id %>
-        <%= submit_tag "Send", class: 'btn btn-primary' %>
+        <%= submit_tag t(:contact_form_submit), class: 'btn btn-primary' %>
         <% end %>
         <% end %>
       </div>

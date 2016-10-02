@@ -10,10 +10,10 @@ de:
   user_form_password: Passwort
   user_form_password_confirmation: Passwort wiederholen
   # password_resets/new.html.erb
-  password_resets_title: Passwort vergessen
-  password_resets_h: Passwort vergessen
+  password_resets_title: Passwort zurücksetzen
+  password_resets_h: Passwort zurücksetzen
   password_resets_email: Email
-  password_resets_submit: Passwort zurücksetzen
+  password_resets_submit: Neues Passwort anfordern
   # _stats.html.erb
   user_stats_following: folge ich
   user_stats_followers: folgen mir

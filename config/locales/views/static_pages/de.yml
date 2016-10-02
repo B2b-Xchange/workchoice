@@ -21,6 +21,7 @@ de:
   # home.html.erb
   followed_filter_button: Folgend
   all_filter_button: Alle
+  post_feed_h: Artikelfeed
   # _user_info.html.erb
   view_profile_link: Zeige mein Profil
   post_count:
@@ -53,3 +54,33 @@ de:
   # show_follow.html.erb
   follow_show_link_profile: Zu meinem Profil
   follow_show_posts: Artikel
+  # Posts show.html.erb
+  post_tab_post: Artikel
+  post_tab_contact: Kontakt
+  post_post_type: Artikelart
+  post_post_type_request_help: Biete Projekt
+  post_post_type_offer_help: Biete Resourcen
+  post_channel: Zielgruppe
+  post_channel_tax_advisor: Steuerberater
+  post_estimated_work_hours: Geschätzter Projektumfang
+  post_remarks: Bemerkungen
+  post_scope_of_work: Arbeitsumfang
+  post_scope_of_experience: Erfahrungsunfang
+  post_time_frame: Zeitrahmen
+  post_hourly_payment: Stundensatz
+  post_document: Anhang
+  address_h: Adresse
+  address_phone: Tel.
+  address_email: E-mail
+  address_contact_person: Ansprechpartner
+  address_vat_no: Steuernummer
+  address_website: Website
+  address_headcount: Anzahl Mitarbeiter
+  address_scope_of_experience: Erfahrungsumfang
+  address_scope_of_work: Arbeitsumfang
+  contact_form_label: Bitte benutze dieses Kontaktformular.
+  contact_from_sumbit: Senden
+  # Posts _post.html.erb
+  post_posted: Erstellt vor %{date}.
+  post_link_delete: löschen
+  post_link_data: Bist du sicher?
