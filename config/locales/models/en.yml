@@ -5,6 +5,9 @@ en:
       post:
         one: Post
         other: Posts
+      address:
+        one: Address
+        other: Addresses
     attributes:
       post:
         content_type: Content type
@@ -23,3 +26,20 @@ en:
         address_id: Contact
         picture: Picture
         document: Document
+      address:
+        email: Contact email
+        contact_person: Contact person
+        company: Company
+        street_name: Street name
+        street_no: Street no.
+        zip: Post code
+        city: City
+        phone: Phone
+        vat_no: Vat no.
+        country_iso_code: Country
+        website: Website
+        state: State or region
+        headcount: Headcount
+        scope_of_experience: Scope of experience
+        scope_of_work: Scope of work
+        display: Display in posts

@@ -5,12 +5,13 @@
     <%= link_to address.user.name, address.user %>
   </span>
   <span class="title">
-    Contact person: <%= address.contact_person %>&nbsp;Contact email: &nbsp;<%= address.email %>
+    <%= t :address_list_contact_person %>: <%= address.contact_person
+    %>,&nbsp;<%= t :address_list_contact_email %>: &nbsp;<%= address.email %>
   </span>
   <span class="timestamp">
-    Created <%= time_ago_in_words address.created_at %> ago.
-    <%= link_to "delete", address, method: :delete,
-        data: { confirm: "Your sure?" } %>
+    <%= t :address_list_created, date: time_ago_in_words(address.created_at) %>
+    <%= link_to t(:address_list_link_delete), address, method: :delete,
+        data: { confirm: t(:address_list_link_data) } %>
   </span>
   
 </li>

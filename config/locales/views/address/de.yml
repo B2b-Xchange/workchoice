@@ -1,0 +1,15 @@
+
+de:
+  # _address.html.erb
+  address_list_contact_person: Ansprechpartner
+  address_list_contact_email: Kontakt E-mail Adresse
+  address_list_created: Erstellt vor %{date}.
+  address_list_link_delete: löschen
+  address_list_link_data: Bist du sicher?
+  # _form.html.erb
+  address_form_country_germany: Deutschland
+  address_form_submit: Adresse hinzufügen
+  # index.html.erb
+  address_title: Alle Adressen
+  address_form_h: Neue Adresse
+  address_index_h: Alle Adressen

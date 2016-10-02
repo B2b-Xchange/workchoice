@@ -5,6 +5,9 @@ de:
       post:
         one: Artikel
         other: Artikel
+      address:
+        one: Adresse
+        other: Adressen
     attributes:
       post:
         content_type: Artikelart
@@ -23,3 +26,20 @@ de:
         address_id: Kontaktadresse
         picture: Bilddatei
         document: Dokumentenanhang
+      address:
+        email: E-mail
+        contact_person: Ansprechpartner
+        company: Firma
+        street_name: Straße
+        street_no: Hausnummer
+        zip: PLZ
+        city: Ort
+        phone: Tel.
+        vat_no: Umsatzsteuer-ID Nummer
+        country_iso_code: Land
+        website: Website
+        state: Bundesland
+        headcount: Anzahl Mitarbeiter
+        scope_of_experience: Erfahrungsumfang
+        scope_of_work: Arbeitsumfang
+        display: In Artikel anzeigen

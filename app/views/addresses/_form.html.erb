@@ -2,58 +2,58 @@
 <%= form_for @address do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
 <div class="field">
-  <%= f.text_field :email, placeholder: "Contact email" %>
+  <%= f.text_field :email, placeholder: Address.human_attribute_name("email") %>
 </div>
 <div class="field">
-  <%= f.text_field :contact_person, placeholder: "Contact person" %>
+  <%= f.text_field :contact_person, placeholder: Address.human_attribute_name("contact_person") %>
 </div>
 <div class="field">
-  <%= f.text_field :company, placeholder: "Company" %>
+  <%= f.text_field :company, placeholder: Address.human_attribute_name("company") %>
 </div>
 <div class="field">
-  <%= f.text_field :street_name, placeholder: "Street name" %>
+  <%= f.text_field :street_name, placeholder: Address.human_attribute_name("street_name") %>
 </div>
 <div class="field">
-  <%= f.text_field :street_no, placeholder: "Street no." %>
+  <%= f.text_field :street_no, placeholder: Address.human_attribute_name("street_no") %>
 </div>
 <div class="field">
-  <%= f.text_field :zip, placeholder: "Post code" %>
+  <%= f.text_field :zip, placeholder: Address.human_attribute_name("zip") %>
 </div>
 <div class="field">
-  <%= f.text_field :city, placeholder: "City" %>
+  <%= f.text_field :city, placeholder: Address.human_attribute_name("city") %>
 </div>
 <div class="field">
-  <%= f.text_field :phone, placeholder: "Phone" %>
+  <%= f.text_field :phone, placeholder: Address.human_attribute_name("phone") %>
 </div>
 <div class="field">
-  <%= f.text_field :vat_no, placeholder: "Vat no." %>
+  <%= f.text_field :vat_no, placeholder: Address.human_attribute_name("vat_no") %>
 </div>
 <div>
-  <%= f.label :country_iso_code, "Country" %>
-  <%= f.select(:country_iso_code, [['Germany', 'DE']],
+  <%= f.label :country_iso_code, Address.human_attribute_name("country_iso_code") %>
+  <%= f.select(:country_iso_code, [[t(:address_form_country_germany), 'DE']],
       class: 'form-control') %>
 </div>
 <div class="field">
-  <%= f.text_field :website, placeholder: "Website" %>
+  <%= f.text_field :website, placeholder: Address.human_attribute_name("website") %>
 </div>
 <div class="field">
-  <%= f.text_field :state, placeholder: "State or region" %>
+  <%= f.text_field :state, placeholder: Address.human_attribute_name("state") %>
 </div>
 <div class="field">
-  <%= f.text_field :headcount, placeholder: "Head count" %>
+  <%= f.text_field :headcount, placeholder: Address.human_attribute_name("headcount") %>
 </div>
 <div class="field">
-  <%= f.text_area :scope_of_experience, placeholder: "Scope of experience" %>
+  <%= f.text_area :scope_of_experience, placeholder: Address.human_attribute_name("scope_of_experience") %>
 </div>
 <div class="field">
-  <%= f.text_area :scope_of_work, placeholder: "Scope of work" %>
+  <%= f.text_area :scope_of_work, placeholder: Address.human_attribute_name("scope_of_work") %>
 </div>
 <div class="checkbox">
   <%= f.label :display do %>
   <%= f.check_box :display %>
-  Display in posts
+  <%= Address.human_attribute_name("display") %>
   <% end %>
 </div>
-<%= f.submit "Add address", class: "btn btn-primary" %>
+<%= f.submit t(:address_form_submit), class: "btn btn-primary" %>
 
 <% end %>

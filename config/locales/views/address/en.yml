@@ -1,0 +1,16 @@
+
+en:
+  # _address.html.erb
+  address_list_contact_person: Contact person
+  address_list_contact_email: Contact email
+  address_list_created: Created %{date} ago.
+  address_list_link_delete: delete
+  address_list_link_data: You sure?
+  # _form.html.erb
+  address_form_country_germany: Germany
+  address_form_submit: Add address
+  # index.html.erb
+  address_title: All addresses
+  address_form_h: New address
+  address_index_h: All addresses
+  

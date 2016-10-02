@@ -1,5 +1,5 @@
 
-<% provide :title, 'All addresses' %>
+<% provide :title, t(:address_title) %>
 
 <div class="row">
   <aside class="col-md-4">
@@ -7,13 +7,13 @@
       <%= render 'shared/user_info' %>
     </section>
     <section class="address_form">
-      <h4>New address</h4>
+      <h4><%= t :address_form_h %></h4>
       <%= render 'form' %>
     </section>
   </aside>
   
   <div class="col-md-8">
-    <h3>Addresses</h3>
+    <h3><%= t :address_index_h %></h3>
     <% if @user.addresses.any? %>
     <ol class="addresses">
       <%= render @addresses %>
