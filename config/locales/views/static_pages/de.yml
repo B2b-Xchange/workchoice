@@ -34,6 +34,7 @@ de:
   post_form_free: Kostenlos
   post_form_submit: Artikel hinzufügen
   post_form_file_size_error: Maximale Dateigröße ist 5 MB. Wähle bitte eine kleinere Datei.
+  post_tags_hint: Tags, z.B. fachliche Anforderung (u.a. Buchhaltung, Jahresabschluss, Steuererklärung, Umstrukturierung, Spezialsteuerrecht, Unternehmensbewertung, Pflichtprüfung, prüferische Durchsicht, Gutachten), getrennt durch Komma
   # _follow.html.erb
   follow_form_submit: Folgen
   # _unfollow.html.erb
@@ -62,11 +63,11 @@ de:
   post_post_type_offer_help: Biete Resourcen
   post_channel: Zielgruppe
   post_channel_tax_advisor: Steuerberater
-  post_estimated_work_hours: Geschätzter Projektumfang
-  post_remarks: Bemerkungen
-  post_scope_of_work: Arbeitsumfang
-  post_scope_of_experience: Erfahrungsunfang
-  post_time_frame: Zeitrahmen
+  post_estimated_work_hours: Umfang des Stundeneinsatzes in h
+  post_remarks: Tags
+  post_scope_of_work: Leistungsumfang
+  post_scope_of_experience: Erfahrungsumfang
+  post_time_frame: Periode des Einsatzes
   post_hourly_payment: Stundensatz
   post_document: Anhang
   address_h: Adresse
@@ -77,9 +78,9 @@ de:
   address_website: Website
   address_headcount: Anzahl Mitarbeiter
   address_scope_of_experience: Erfahrungsumfang
-  address_scope_of_work: Arbeitsumfang
+  address_scope_of_work: Leistungsumfang
   contact_form_label: Bitte benutze dieses Kontaktformular.
-  contact_from_sumbit: Senden
+  contact_form_submit: Senden
   # Posts _post.html.erb
   post_posted: Erstellt vor %{date}.
   post_link_delete: löschen

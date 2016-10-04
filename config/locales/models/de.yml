@@ -14,9 +14,9 @@ de:
         channel: Zielgruppe
         billing_type: Veröffentlichungsoption
         title: Titel
-        scope_hours: Arbeitsumfang in h
-        remarks: Hinweise
-        scope_of_work: Aufgabenumfang
+        scope_hours: Umfang des Stundeneinsatzes in h
+        remarks: Tags
+        scope_of_work: Leistungsumfang
         scope_of_experience: Erfahrungsumfang
         start_date: Anfangsdatum
         end_date: Enddatum
@@ -41,5 +41,5 @@ de:
         state: Bundesland
         headcount: Anzahl Mitarbeiter
         scope_of_experience: Erfahrungsumfang
-        scope_of_work: Arbeitsumfang
+        scope_of_work: Leistungsumfang
         display: In Artikel anzeigen

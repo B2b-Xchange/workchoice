@@ -34,6 +34,7 @@ en:
   post_form_free: Free
   post_form_submit: Post
   post_form_file_size_error: Maximum file size is 5 MB. Please choose a smaller file.
+  post_tags_hint: Tags, z.B. fachliche Anforderung (u.a. Buchhaltung, Jahresabschluss, Steuererklärung, Umstrukturierung, Spezialsteuerrecht, Unternehmensbewertung, Pflichtprüfung, prüferische Durchsicht, Gutachten), getrennt durch Komma
   # _follow.html.erb
   follow_form_submit: Follow
   # _unfollow.html.erb
@@ -62,11 +63,11 @@ en:
   post_post_type_offer_help: Offer free resources
   post_channel: Channel
   post_channel_tax_advisor: Tax advisor
-  post_estimated_work_hours: Estimated work hours
-  post_remarks: Remarks
+  post_estimated_work_hours: Estimated work involved
+  post_remarks: Tags
   post_scope_of_work: Scope of work
   post_scope_of_experience: Scope of experience
-  post_time_frame: Time frame
+  post_time_frame: Time frame for assignment
   post_hourly_payment: Hourly payment
   post_document: Attachment
   address_h: Address

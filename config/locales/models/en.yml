@@ -14,8 +14,8 @@ en:
         channel: Channel
         billing_type: Publishing option
         title: Title
-        scope_hours: Scope in hours
-        remarks: Remarks
+        scope_hours: Estimated work involved
+        remarks: Tags
         scope_of_work: Scope of work
         scope_of_experience: Scope of experience
         start_date: Assignment start date

@@ -25,7 +25,7 @@
   <%= f.text_field :scope_hours, placeholder: Post.human_attribute_name("scope_hours") %>
 </div>
 <div class="field">
-  <%= f.text_area :remarks, placeholder: Post.human_attribute_name("remarks") %>
+  <%= f.text_area :remarks, placeholder: t(:post_tags_hint) %>
 </div>
 <div class="field">
   <%= f.text_area :scope_of_work, placeholder: Post.human_attribute_name("scope_of_work") %>
@@ -47,12 +47,15 @@
   <%= f.label :currency %>
   <%= f.select(:currency, [['EUR', 1]]) %>
 </div>
-<div class="checkbox">
-  <%= f.label :anonymous do %>
-  <%= f.check_box :anonymous %>
-  <%= Post.human_attribute_name("anonymous") %>
-  <% end %>
-</div>
+<!--
+    ABANDONED IN FAVOR OF DISPLAY OPTION IN CONTACT ADDRESS
+    <div class="checkbox">
+      <%= f.label :anonymous do %>
+      <%= f.check_box :anonymous %>
+      <%= Post.human_attribute_name("anonymous") %>
+      <% end %>
+    </div>
+-->
 <div>
   <%= f.label :address_id, Post.human_attribute_name("address_id") %>
   <%= f.collection_select(:address_id, Address.where("user_id = ?", session[:user_id]), :id, :contact_person) %>
