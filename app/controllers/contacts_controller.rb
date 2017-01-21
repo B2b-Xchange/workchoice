@@ -8,10 +8,10 @@ class ContactsController < ApplicationController
     
     mail = UserMailer.contact_request(from, to, post, params["message"])
     if mail.deliver_now
-      flash[:info] = "Message sent"
+      flash[:info] = t(:controller_contacts_flash_info)
       redirect_to post
     else
-      flash[:error] = "Error sending message. Please try again."
+      flash[:error] = t(:controller_contacts_flash_error)
       redirect_to post
     end
   end

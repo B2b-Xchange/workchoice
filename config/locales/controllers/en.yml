@@ -1,0 +1,19 @@
+
+en:
+  # account_activations_controller.rb
+  controller_account_activation_flash_success: Account activated!
+  controller_account_activation_flash_danger: Invalid activation link.
+  # addresses_controller.rb
+  controller_addresses_save_flash_success: Address created.
+  controller_addresses_delete_flash_success: Address deleted.
+  # application_controller.rb
+  controller_application_logged_in_flash_danger: Please log in.
+  # contacts_controller.rb
+  controller_contacts_flash_info: Message sent.
+  controller_contacts_flash_error: Error sending message. Please try again.
+  # password_resets_controller.rb
+  controller_resets_create_flash_info: Email sent with password reset instructions.
+  controller_resets_create_flash_danger: Email address not found.
+  controller_resets_update_empty: Can't be empty.
+  controller_resets_update_flash_success: Password has been reset.
+  controller_resets_expired_flash_danger: Password reset has expired.

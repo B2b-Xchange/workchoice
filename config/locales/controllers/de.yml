@@ -1,0 +1,19 @@
+
+de:
+  # account_activations_controller.rb
+  controller_account_activation_flash_success: Benutzerkonto aktiviert!
+  controller_account_activation_flash_danger: Ungültiger Aktivierungslink.
+  # addresses_controller.rb
+  controller_addresses_save_flash_success: Adresse gespeichert.
+  controller_addresses_delete_flash_success: Adresse gelöscht.
+  # application_controller.rb
+  controller_application_logged_in_flash_danger: Du musst angemeldet sein.
+  # contacts_controller.rb
+  controller_contacts_flash_info: Nachricht gesendet.
+  controller_contacts_flash_error: Etwas ging schief. Bitte versuche es erneut.
+  # password_resets_controller.rb
+  controller_resets_create_flash_info: E-mail mit Link zum Zurücksetzen deines Passworts gesendet.
+  controller_resets_create_flash_danger: Kein Datensatz mit dieser E-mail Adresse gefunden.
+  controller_resets_update_empty: darf nicht leer sein
+  controller_resets_update_flash_success: Passwort wurde geändert.
+  controller_resets_expired_flash_danger: Zeit zum Zurücksetzen des Passworts abgelaufen.

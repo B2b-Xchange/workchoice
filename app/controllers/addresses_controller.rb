@@ -12,7 +12,7 @@ class AddressesController < ApplicationController
   def create
     @address = current_user.addresses.build(address_params)
     if @address.save
-      flash[:success] = "Address created"
+      flash[:success] = t(:controller_addresses_save_flash_success)
     
     end
     redirect_to addresses_url
@@ -26,7 +26,7 @@ class AddressesController < ApplicationController
   def destroy
     
     Address.find(params[:id]).destroy
-    flash[:success] = "Address deleted"
+    flash[:success] = t(:controller_addresses_delete_flash_success)
     redirect_to addresses_url
   end
 

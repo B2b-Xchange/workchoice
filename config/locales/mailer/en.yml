@@ -1,0 +1,5 @@
+
+en:
+  mailer_user_account_activation_subject: Account activation
+  mailer_user_password_reset_subject: Password reset
+  mailer_user_contact_subject: Contact request -  %{title}

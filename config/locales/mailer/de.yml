@@ -1,0 +1,5 @@
+
+de:
+  mailer_user_account_activation_subject: Benutzerkonto aktivieren
+  mailer_user_password_reset_subject: Passwort zurücksetzen
+  mailer_user_contact_subject: Bitte um Kontakt -  %{title}
