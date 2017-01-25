@@ -1,0 +1,8 @@
+
+<p>Von: <a href="<%= user_url @from, locale: "de" %>"><%= @from.name %></a></p>
+<p>Zu diesem Post: <a href="<%= post_url @post, locale: "de" %>"><%= @post.title
+                                                         %></a></p>
+
+<p style="text-decoration: underline; margin-top: 20px;">Nachricht:</p>
+
+<p><%= @message %></p>

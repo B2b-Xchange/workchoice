@@ -1,0 +1,15 @@
+
+<h1>Workchoice App</h1>
+
+<p>
+  Hallo <%= @user.name %>,
+</p>
+
+<p>
+  Willkommen bei Workchoice! Bitte klicke auf folgenden Link um dein
+  Benutzerkonto zu aktivieren:
+</p>
+
+<%= link_to "Activate",
+    edit_account_activation_url(@user.activation_token, email:
+    @user.email, locale: "en") %>
