@@ -35,10 +35,12 @@
       placeholder: Post.human_attribute_name("scope_of_experience")) %>
 </div>
 <div class="field">
-  <%= f.date_field :start_date, placeholder: Post.human_attribute_name("start_date") %>
+  <%= f.label Post.human_attribute_name("start_date") %>
+  <%= f.date_field :start_date %>
 </div>
 <div class="field">
-  <%= f.date_field :end_date, placeholder: Post.human_attribute_name("end_date") %>
+  <%= f.label Post.human_attribute_name("end_date") %>
+  <%= f.date_field :end_date %>
 </div>
 <div class="field">
   <%= f.text_field :hourly_payment, placeholder: Post.human_attribute_name("hourly_payment") %>

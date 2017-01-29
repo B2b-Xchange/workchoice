@@ -1,0 +1,29 @@
+
+
+<li id="post-<%= post.id %>">
+  <%= link_to gravatar_for(post.user, size: 50),
+      post.user %>
+  <span class="user"><%= link_to post.user.name,
+                         post.user %></span>
+  <span class="title">
+    <%= link_to post.title, post %>
+    <% if post.content_type == 1 %>
+    (<%= t :post_post_type_request_help %>)
+    <% elsif post.content_type == 2 %>
+    (<%= t :post_post_type_offer_help %>)
+    <% end %>
+
+    <%= image_tag post.picture.url if post.picture? %>
+  </span>
+  
+  <span class="title"><%= post.start_date.to_s :long %> -
+  <%= post.end_date.to_s :long %></span>
+  <span class="title"><%= t :post_hourly_payment %>: <%= post.hourly_payment / 100 %> EUR</span>
+  <span class="timestamp">
+    <%= t :post_posted, date: time_ago_in_words(post.created_at) %>
+    <% if current_user? post.user %>
+    <%= link_to(t(:post_link_delete), post, method: :delete,
+        data: { confirm: t(:post_link_data) }) %>
+    <% end %>
+  </span>
+</li>
